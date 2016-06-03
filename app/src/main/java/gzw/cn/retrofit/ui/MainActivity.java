@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if(response.body()==null){
-                    Logger.d(MyApp.TAG,"解析出错");
+                    //Logger.d(MyApp.TAG,"解析出错");
                 }
                 bind.tvGetJson.setText(response.body().username+":"+response.body().password);
             }
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if(response.body()==null){
-                    Logger.d(MyApp.TAG,"解析出错");
+                    //Logger.d(MyApp.TAG,"解析出错");
                 }
                 try {
                     bind.tvGetJsonDp.setText(response.body().string());
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Logger.d(t.getMessage(),null);
+                //Logger.d(t.getMessage(),null);
             }
         });
     }
@@ -145,11 +145,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onResponse(Call<User> call, Response<User> response) {
                 if(response.isSuccessful()){
                     if(response.body()==null){
-                        Logger.d(MyApp.TAG,"解析出错");
+                       // Logger.d(MyApp.TAG,"解析出错");
                     }
                     bind.tvGetForm.setText(response.body().username+":"+response.body().password);
                 }else{
-                    Logger.d("网络访问出错","解析出错");
+                   // Logger.d("网络访问出错","解析出错");
                 }
 
             }
